@@ -1,0 +1,32 @@
+<form (ngSubmit)="searchMovie(f)" #f="ngForm">
+  <div class="row">
+    <div class="col-md-5 form-group">
+      <label for="DATE">Date</label>
+      <input type="text" id="date" 
+      class=""
+      name="date"
+      ngModel>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-success" >Search Movie</button>
+    </div>
+  </div>
+</form>
+  <div class="container"> 
+  <div class="row"> 
+    <div class="col-md-4" *ngFor="let mv of movies" >
+      <div class="movie">
+        <h3>Name:   {{mv.name}}</h3>
+        <h4>genre: {{mv.genres}}</h4>
+        <h5>type:  {{mv.type}}</h5>
+        <h5>date:  {{mv.date}}</h5>
+        <h5>year:  {{mv.year}}</h5>
+        <h5>Actors:</h5>
+        <div  class="movieActors" *ngFor="let ac of mv.actors" >
+            <h5>    name:  {{ac.name}}</h5>
+            <h5>    role:  {{ac.role}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
